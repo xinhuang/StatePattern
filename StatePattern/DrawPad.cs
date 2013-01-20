@@ -23,12 +23,10 @@ namespace StatePattern
 
         public void Run()
         {
-            while (true)
+            do
             {
                 OnPaint();
-                if (!ProcessCommand())
-                    break;
-            }
+            } while (ProcessCommand());
         }
 
         private bool ProcessCommand()
