@@ -9,7 +9,7 @@ namespace StatePattern
         public Point _begin;
         public Point _end;
         public Shape _shape;
-        private RectangleMouse _mouseState;
+        private AbstractMouseState _mouseState;
 
         public bool WaitForClick
         {
@@ -26,6 +26,7 @@ namespace StatePattern
             switch (command)
             {
                 case "line":
+                    _mouseState = new LineMouse();
                     _drawerState = DrawerState.WaitLineBeginPoint;
                     _waitForClick = true;
                     return true;
@@ -49,17 +50,7 @@ namespace StatePattern
             switch (_drawerState)
             {
                 case DrawerState.WaitLineBeginPoint:
-                    _begin = location;
-                    _drawerState = DrawerState.WaitLineEndPoint;
-                    break;
-
                 case DrawerState.WaitLineEndPoint:
-                    _end = location;
-                    _drawerState = DrawerState.None;
-                    _shape = new Line(_begin, _end);
-                    _waitForClick = false;
-                    break;
-
                 case DrawerState.WaitRectangleBeginPoint:
                 case DrawerState.WaitRectangleEndPoint:
                     _mouseState.OnMouseClick(this, location);
