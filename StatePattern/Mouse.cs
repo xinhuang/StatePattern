@@ -4,20 +4,12 @@ namespace StatePattern
 {
     public class Mouse
     {
-        private bool _waitForClick = true;
-        private LineDrawer _drawer = LineDrawer.None;
-        private Point _begin;
-        private Point _end;
-        private Shape _shape;
-
-        enum LineDrawer
-        {
-            None,
-            WaitLineBeginPoint,
-            WaitLineEndPoint,
-            WaitRectangleBeginPoint,
-            WaitRectangleEndPoint
-        }
+        public bool _waitForClick = true;
+        public DrawerState _drawerState = DrawerState.None;
+        public Point _begin;
+        public Point _end;
+        public Shape _shape;
+        private RectangleMouse _mouseState;
 
         public bool WaitForClick
         {
@@ -34,12 +26,13 @@ namespace StatePattern
             switch (command)
             {
                 case "line":
-                    _drawer = LineDrawer.WaitLineBeginPoint;
+                    _drawerState = DrawerState.WaitLineBeginPoint;
                     _waitForClick = true;
                     return true;
 
                 case "rectangle":
-                    _drawer = LineDrawer.WaitRectangleBeginPoint;
+                    _mouseState = new RectangleMouse();
+                    _drawerState = DrawerState.WaitRectangleBeginPoint;
                     _waitForClick = true;
                     return true;
 
@@ -53,30 +46,23 @@ namespace StatePattern
 
         public void OnMouseClick(Point location)
         {
-            switch (_drawer)
+            switch (_drawerState)
             {
-                case LineDrawer.WaitLineBeginPoint:
+                case DrawerState.WaitLineBeginPoint:
                     _begin = location;
-                    _drawer = LineDrawer.WaitLineEndPoint;
+                    _drawerState = DrawerState.WaitLineEndPoint;
                     break;
 
-                case LineDrawer.WaitLineEndPoint:
+                case DrawerState.WaitLineEndPoint:
                     _end = location;
-                    _drawer = LineDrawer.None;
+                    _drawerState = DrawerState.None;
                     _shape = new Line(_begin, _end);
                     _waitForClick = false;
                     break;
 
-                case LineDrawer.WaitRectangleBeginPoint:
-                    _begin = location;
-                    _drawer = LineDrawer.WaitRectangleEndPoint;
-                    break;
-
-                case LineDrawer.WaitRectangleEndPoint:
-                    _end = location;
-                    _drawer = LineDrawer.None;
-                    _shape = new Rectangle(_begin, _end);
-                    _waitForClick = false;
+                case DrawerState.WaitRectangleBeginPoint:
+                case DrawerState.WaitRectangleEndPoint:
+                    _mouseState.OnMouseClick(this, location);
                     break;
 
                 default:
