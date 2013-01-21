@@ -4,10 +4,6 @@ namespace StatePattern
 {
     public class Mouse
     {
-        public DrawerState _drawerState = DrawerState.None;
-        public Point _begin;
-        public Point _end;
-        public Shape _shape;
         private AbstractMouseState _mouseState;
 
         public bool WaitForClick
@@ -17,7 +13,7 @@ namespace StatePattern
 
         public Shape Shape
         {
-            get { return _shape; }
+            get { return _mouseState.Shape; }
         }
 
         public bool Process(string command)
@@ -25,13 +21,11 @@ namespace StatePattern
             switch (command)
             {
                 case "line":
-                    _mouseState = new LineMouse();
-                    _drawerState = DrawerState.WaitLineBeginPoint;
+                    _mouseState = new DrawLineState();
                     return true;
 
                 case "rectangle":
-                    _mouseState = new RectangleMouse();
-                    _drawerState = DrawerState.WaitRectangleBeginPoint;
+                    _mouseState = new DrawRectangleState();
                     return true;
 
                 case "exit":
@@ -44,18 +38,7 @@ namespace StatePattern
 
         public void OnMouseClick(Point location)
         {
-            switch (_drawerState)
-            {
-                case DrawerState.WaitLineBeginPoint:
-                case DrawerState.WaitLineEndPoint:
-                case DrawerState.WaitRectangleBeginPoint:
-                case DrawerState.WaitRectangleEndPoint:
-                    _mouseState.OnMouseClick(this, location);
-                    break;
-
-                default:
-                    throw new InvalidCommandException("Draw line");
-            }
+            _mouseState.OnMouseClick(this, location);
         }
     }
 }

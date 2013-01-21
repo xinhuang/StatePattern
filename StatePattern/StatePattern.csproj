@@ -44,15 +44,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AbstractMouseState.cs" />
-    <Compile Include="DrawerState.cs" />
     <Compile Include="DrawPad.cs" />
     <Compile Include="InvalidCommandException.cs" />
     <Compile Include="Line.cs" />
-    <Compile Include="LineMouse.cs" />
+    <Compile Include="DrawLineState.cs" />
     <Compile Include="Mouse.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Rectangle.cs" />
-    <Compile Include="RectangleMouse.cs" />
+    <Compile Include="DrawRectangleState.cs" />
     <Compile Include="Shape.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
