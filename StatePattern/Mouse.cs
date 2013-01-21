@@ -4,7 +4,6 @@ namespace StatePattern
 {
     public class Mouse
     {
-        public bool _waitForClick = true;
         public DrawerState _drawerState = DrawerState.None;
         public Point _begin;
         public Point _end;
@@ -13,7 +12,7 @@ namespace StatePattern
 
         public bool WaitForClick
         {
-            get { return _waitForClick; }
+            get { return _mouseState.WaitForClick; }
         }
 
         public Shape Shape
@@ -28,13 +27,11 @@ namespace StatePattern
                 case "line":
                     _mouseState = new LineMouse();
                     _drawerState = DrawerState.WaitLineBeginPoint;
-                    _waitForClick = true;
                     return true;
 
                 case "rectangle":
                     _mouseState = new RectangleMouse();
                     _drawerState = DrawerState.WaitRectangleBeginPoint;
-                    _waitForClick = true;
                     return true;
 
                 case "exit":
