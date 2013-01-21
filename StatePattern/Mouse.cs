@@ -13,8 +13,10 @@ namespace StatePattern
         enum LineDrawer
         {
             None,
-            WaitBeginPoint,
-            WaitEndPoint,
+            WaitLineBeginPoint,
+            WaitLineEndPoint,
+            WaitRectangleBeginPoint,
+            WaitRectangleEndPoint
         }
 
         public bool WaitForClick
@@ -32,11 +34,18 @@ namespace StatePattern
             switch (command)
             {
                 case "line":
-                    _drawer = LineDrawer.WaitBeginPoint;
+                    _drawer = LineDrawer.WaitLineBeginPoint;
                     _waitForClick = true;
                     return true;
+
+                case "rectangle":
+                    _drawer = LineDrawer.WaitRectangleBeginPoint;
+                    _waitForClick = true;
+                    return true;
+
                 case "exit":
                     return false;
+
                 default:
                     throw new InvalidCommandException(command + " is not recognized.");
             }
@@ -46,15 +55,27 @@ namespace StatePattern
         {
             switch (_drawer)
             {
-                case LineDrawer.WaitBeginPoint:
+                case LineDrawer.WaitLineBeginPoint:
                     _begin = location;
-                    _drawer = LineDrawer.WaitEndPoint;
+                    _drawer = LineDrawer.WaitLineEndPoint;
                     break;
 
-                case LineDrawer.WaitEndPoint:
+                case LineDrawer.WaitLineEndPoint:
                     _end = location;
                     _drawer = LineDrawer.None;
                     _shape = new Line(_begin, _end);
+                    _waitForClick = false;
+                    break;
+
+                case LineDrawer.WaitRectangleBeginPoint:
+                    _begin = location;
+                    _drawer = LineDrawer.WaitRectangleEndPoint;
+                    break;
+
+                case LineDrawer.WaitRectangleEndPoint:
+                    _end = location;
+                    _drawer = LineDrawer.None;
+                    _shape = new Rectangle(_begin, _end);
                     _waitForClick = false;
                     break;
 

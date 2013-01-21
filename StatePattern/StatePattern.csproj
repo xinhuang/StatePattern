@@ -48,6 +48,7 @@
     <Compile Include="Line.cs" />
     <Compile Include="Mouse.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="Rectangle.cs" />
     <Compile Include="Shape.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
