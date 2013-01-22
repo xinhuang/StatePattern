@@ -4,10 +4,10 @@ namespace StatePattern
 {
     public class Mouse
     {
-        private DrawPad _pad;
+        private IDrawPad _pad;
         private AbstractMouseState _mouseState;
 
-        public Mouse(DrawPad pad)
+        public Mouse(IDrawPad pad)
         {
             _pad = pad;
         }
@@ -20,6 +20,11 @@ namespace StatePattern
         public Shape Shape
         {
             get { return _mouseState.Shape; }
+        }
+
+        public IDrawPad Pad
+        {
+            get { return _pad; }
         }
 
         public bool Process(string command)

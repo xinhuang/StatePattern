@@ -4,7 +4,12 @@ using System.Drawing;
 
 namespace StatePattern
 {
-    public class DrawPad
+    public interface IDrawPad
+    {
+        void Add(Shape shape);
+    }
+
+    public class DrawPad : IDrawPad
     {
         private readonly List<Shape> _shapes = new List<Shape>();
         private readonly Mouse _mouse;
@@ -32,6 +37,11 @@ namespace StatePattern
             {
                 OnPaint();
             } while (ProcessCommand());
+        }
+
+        public void Add(Shape shape)
+        {
+            _shapes.Add(shape);
         }
 
         private bool ProcessCommand()
