@@ -2,7 +2,7 @@
 
 namespace StatePattern
 {
-    internal abstract class AbstractMouseState
+    public abstract class AbstractMouseState
     {
         private bool _waitForClick = true;
 
@@ -12,6 +12,6 @@ namespace StatePattern
             protected set { _waitForClick = value; }
         }
 
-        public abstract void OnMouseClick(Mouse mouse, Point location);
+        public abstract void OnMouseClick(IMouse mouse, Point location);
     }
 }

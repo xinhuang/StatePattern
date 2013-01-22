@@ -9,7 +9,7 @@ namespace StatePattern
             WaitForClick = false;
         }
 
-        public override void OnMouseClick(Mouse mouse, Point location)
+        public override void OnMouseClick(IMouse mouse, Point location)
         {
         }
     }

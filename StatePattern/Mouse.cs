@@ -2,14 +2,14 @@
 
 namespace StatePattern
 {
-    public class Mouse
+    public class Mouse : IMouse
     {
-        private readonly IDrawPad _pad;
+        private readonly IDrawPad _drawPad;
         private AbstractMouseState _mouseState;
 
-        public Mouse(IDrawPad pad)
+        public Mouse(IDrawPad drawPad)
         {
-            _pad = pad;
+            _drawPad = drawPad;
         }
 
         public bool WaitForClick
@@ -17,9 +17,9 @@ namespace StatePattern
             get { return _mouseState.WaitForClick; }
         }
 
-        public IDrawPad Pad
+        public IDrawPad DrawPad
         {
-            get { return _pad; }
+            get { return _drawPad; }
         }
 
         public bool Process(string command)
@@ -27,7 +27,7 @@ namespace StatePattern
             switch (command)
             {
                 case "line":
-                    _mouseState = new DrawLineState();
+                    _mouseState = new DrawLineMouseState();
                     return true;
 
                 case "rectangle":

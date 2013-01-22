@@ -14,7 +14,7 @@ namespace StatePattern
         private Point _end;
         private State _state = State.WaitRectangleBeginPoint;
 
-        public override void OnMouseClick(Mouse mouse, Point location)
+        public override void OnMouseClick(IMouse mouse, Point location)
         {
             switch (_state)
             {
@@ -26,7 +26,7 @@ namespace StatePattern
                 case State.WaitRectangleEndPoint:
                     _end = location;
                     _state = State.WaitRectangleBeginPoint;
-                    mouse.Pad.Add(new Rectangle(_begin, _end));
+                    mouse.DrawPad.Add(new Rectangle(_begin, _end));
                     WaitForClick = false;
                     mouse.Reset();
                     break;

@@ -47,9 +47,10 @@
     <Compile Include="DrawPad.cs" />
     <Compile Include="IdleMouseState.cs" />
     <Compile Include="IDrawPad.cs" />
+    <Compile Include="IMouse.cs" />
     <Compile Include="InvalidCommandException.cs" />
     <Compile Include="Line.cs" />
-    <Compile Include="DrawLineState.cs" />
+    <Compile Include="DrawLineMouseState.cs" />
     <Compile Include="Mouse.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Rectangle.cs" />

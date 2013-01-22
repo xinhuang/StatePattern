@@ -2,7 +2,7 @@
 
 namespace StatePattern
 {
-    class DrawLineState : AbstractMouseState
+    public class DrawLineMouseState : AbstractMouseState
     {
         private enum State
         {
@@ -14,7 +14,7 @@ namespace StatePattern
         private Point _end;
         private State _state = State.WaitLineBeginPoint;
 
-        public override void OnMouseClick(Mouse mouse, Point location)
+        public override void OnMouseClick(IMouse mouse, Point location)
         {
             switch (_state)
             {
@@ -27,7 +27,7 @@ namespace StatePattern
                     _end = location;
                     _state = State.WaitLineBeginPoint;
                     WaitForClick = false;
-                    mouse.Pad.Add(new Line(_begin, _end));
+                    mouse.DrawPad.Add(new Line(_begin, _end));
                     mouse.Reset();
                     break;
             }

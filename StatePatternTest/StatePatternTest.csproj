@@ -57,6 +57,7 @@
     <Compile Include="Mouse_OnClick.cs" />
     <Compile Include="Mouse_Process.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DrawLineMouseState_OnMouseClick.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\StatePattern\StatePattern.csproj">
