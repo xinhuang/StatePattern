@@ -7,12 +7,11 @@ namespace StatePatternTest
     [TestClass]
     public class Mouse_Process
     {
-        private readonly Mouse _sut = new Mouse();
+        private readonly Mouse _sut = new Mouse(null);
 
         [TestMethod]
         public void given_line_should_wait_for_click_set_to_true()
         {
-            _sut.Process("line");
             _sut.Process("line");
 
             Assert.IsTrue(_sut.WaitForClick);

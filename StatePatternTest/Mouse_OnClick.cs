@@ -8,7 +8,7 @@ namespace StatePatternTest
     [TestClass]
     public class Mouse_OnClick
     {
-        private readonly Mouse _sut = new Mouse();
+        private readonly Mouse _sut = new Mouse(null);
 
         [TestMethod]
         public void given_draw_line_and_2_click_should_return_a_valid_line_object()

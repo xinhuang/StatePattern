@@ -7,7 +7,12 @@ namespace StatePattern
     public class DrawPad
     {
         private readonly List<Shape> _shapes = new List<Shape>();
-        private readonly Mouse _mouse = new Mouse();
+        private readonly Mouse _mouse;
+
+        public DrawPad()
+        {
+            _mouse = new Mouse(this);
+        }
 
         public void OnPaint()
         {

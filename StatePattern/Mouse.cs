@@ -4,7 +4,13 @@ namespace StatePattern
 {
     public class Mouse
     {
+        private DrawPad _pad;
         private AbstractMouseState _mouseState;
+
+        public Mouse(DrawPad pad)
+        {
+            _pad = pad;
+        }
 
         public bool WaitForClick
         {
