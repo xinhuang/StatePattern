@@ -11,3 +11,4 @@ Requirements
 * Draw circle.
 * Draw ellipse.
 * Draw triangle.
+* Draw polygon. (Double click or click on the start point to finish.)
