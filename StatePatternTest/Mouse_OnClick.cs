@@ -21,15 +21,14 @@ namespace StatePatternTest
         [TestMethod]
         public void given_draw_line_and_2_click_should_return_a_valid_line_object()
         {
-            var expectLine = new Line(new Point(1, 1), new Point(1, 2));
+            var expect = new Line(new Point(1, 1), new Point(1, 2));
 
             _sut.Process("line");
             _sut.OnMouseClick(new Point(1, 1));
             _sut.OnMouseClick(new Point(1, 2));
 
             Assert.IsFalse(_sut.WaitForClick);
-            _mockPad.Verify(o => o.Add(expectLine), Times.Once());
-            Assert.AreEqual(expectLine, _sut.Shape);
+            _mockPad.Verify(o => o.Add(expect), Times.Once());
         }
 
         [TestMethod]
@@ -39,7 +38,7 @@ namespace StatePatternTest
             _sut.OnMouseClick(new Point(1, 1));
 
             Assert.IsTrue(_sut.WaitForClick);
-            Assert.AreEqual(null, _sut.Shape);
+            _mockPad.Verify(o => o.Add(It.IsAny<Shape>()), Times.Never());
         }
 
         [TestMethod]
@@ -52,7 +51,7 @@ namespace StatePatternTest
             _sut.OnMouseClick(new Point(1, 2));
 
             Assert.IsFalse(_sut.WaitForClick);
-            Assert.AreEqual(expect, _sut.Shape);
+            _mockPad.Verify(o => o.Add(expect), Times.Once());
         }
     }
 }

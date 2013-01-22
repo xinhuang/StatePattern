@@ -4,7 +4,7 @@ namespace StatePattern
 {
     public class Mouse
     {
-        private IDrawPad _pad;
+        private readonly IDrawPad _pad;
         private AbstractMouseState _mouseState;
 
         public Mouse(IDrawPad pad)
@@ -15,11 +15,6 @@ namespace StatePattern
         public bool WaitForClick
         {
             get { return _mouseState.WaitForClick; }
-        }
-
-        public Shape Shape
-        {
-            get { return _mouseState.Shape; }
         }
 
         public IDrawPad Pad

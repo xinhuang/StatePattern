@@ -4,11 +4,6 @@ using System.Drawing;
 
 namespace StatePattern
 {
-    public interface IDrawPad
-    {
-        void Add(Shape shape);
-    }
-
     public class DrawPad : IDrawPad
     {
         private readonly List<Shape> _shapes = new List<Shape>();
@@ -58,7 +53,6 @@ namespace StatePattern
                 _mouse.OnMouseClick(GetPoint(value));
             } while (_mouse.WaitForClick);
 
-            _shapes.Add(_mouse.Shape);
             return true;
         }
 

@@ -26,7 +26,7 @@ namespace StatePattern
                 case State.WaitRectangleEndPoint:
                     _end = location;
                     _state = State.WaitRectangleBeginPoint;
-                    Shape = new Rectangle(_begin, _end);
+                    mouse.Pad.Add(new Rectangle(_begin, _end));
                     WaitForClick = false;
                     break;
             }
