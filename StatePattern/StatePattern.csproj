@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="AbstractMouseState.cs" />
     <Compile Include="DrawPad.cs" />
+    <Compile Include="IdleMouseState.cs" />
     <Compile Include="IDrawPad.cs" />
     <Compile Include="InvalidCommandException.cs" />
     <Compile Include="Line.cs" />

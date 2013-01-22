@@ -46,5 +46,10 @@ namespace StatePattern
         {
             _mouseState.OnMouseClick(this, location);
         }
+
+        public void Reset()
+        {
+            _mouseState = new IdleMouseState();
+        }
     }
 }

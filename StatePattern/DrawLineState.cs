@@ -26,8 +26,9 @@ namespace StatePattern
                 case State.WaitLineEndPoint:
                     _end = location;
                     _state = State.WaitLineBeginPoint;
-                    mouse.Pad.Add(new Line(_begin, _end));
                     WaitForClick = false;
+                    mouse.Pad.Add(new Line(_begin, _end));
+                    mouse.Reset();
                     break;
             }
         }

@@ -28,6 +28,7 @@ namespace StatePattern
                     _state = State.WaitRectangleBeginPoint;
                     mouse.Pad.Add(new Rectangle(_begin, _end));
                     WaitForClick = false;
+                    mouse.Reset();
                     break;
             }
         }
