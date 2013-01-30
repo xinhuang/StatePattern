@@ -26,5 +26,13 @@ namespace StatePatternTest
 
             _mockPad.Verify(o => o.Add(It.IsAny<Shape>()), Times.Once());
         }
+
+        [TestMethod]
+        public void given_1_click_should_add_nothing_to_pad()
+        {
+            _sut.OnMouseClick(_mockMouse.Object, new Point(1, 1));
+
+            _mockPad.Verify(o => o.Add(It.IsAny<Shape>()), Times.Never());
+        }
     }
 }
