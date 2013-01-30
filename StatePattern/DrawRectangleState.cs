@@ -2,7 +2,7 @@
 
 namespace StatePattern
 {
-    class DrawRectangleState : AbstractMouseState
+    class DrawRectangleState : IMouseState
     {
         private enum State
         {
@@ -14,7 +14,7 @@ namespace StatePattern
         private Point _end;
         private State _state = State.WaitRectangleBeginPoint;
 
-        public override void OnMouseClick(IMouse mouse, Point location)
+        public void OnMouseClick(IMouse mouse, Point location)
         {
             switch (_state)
             {
@@ -27,8 +27,6 @@ namespace StatePattern
                     _end = location;
                     _state = State.WaitRectangleBeginPoint;
                     mouse.DrawPad.Add(new Rectangle(_begin, _end));
-                    WaitForClick = false;
-                    mouse.Reset();
                     break;
             }
         }

@@ -5,16 +5,11 @@ namespace StatePattern
     public class Mouse : IMouse
     {
         private readonly IDrawPad _drawPad;
-        private AbstractMouseState _mouseState;
+        private IMouseState _mouseState;
 
         public Mouse(IDrawPad drawPad)
         {
             _drawPad = drawPad;
-        }
-
-        public bool WaitForClick
-        {
-            get { return _mouseState.WaitForClick; }
         }
 
         public IDrawPad DrawPad

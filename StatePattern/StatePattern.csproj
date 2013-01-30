@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AbstractMouseState.cs" />
+    <Compile Include="IMouseState.cs" />
     <Compile Include="DrawPad.cs" />
     <Compile Include="IdleMouseState.cs" />
     <Compile Include="IDrawPad.cs" />

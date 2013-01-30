@@ -2,14 +2,9 @@
 
 namespace StatePattern
 {
-    class IdleMouseState : AbstractMouseState
+    class IdleMouseState : IMouseState
     {
-        public IdleMouseState()
-        {
-            WaitForClick = false;
-        }
-
-        public override void OnMouseClick(IMouse mouse, Point location)
+        public void OnMouseClick(IMouse mouse, Point location)
         {
         }
     }

@@ -31,12 +31,15 @@ namespace StatePattern
             do
             {
                 OnPaint();
-            } while (ProcessCommand());
+                if (!ProcessCommand())
+                    break;
+            } while (true);
         }
 
         public void Add(Shape shape)
         {
             _shapes.Add(shape);
+            OnPaint();
         }
 
         private bool ProcessCommand()
@@ -49,17 +52,29 @@ namespace StatePattern
             do
             {
                 Console.WriteLine("Please enter a point:");
-                string value = Console.ReadLine();
-                _mouse.OnMouseClick(GetPoint(value));
-            } while (_mouse.WaitForClick);
+                command = Console.ReadLine();
+
+                Point location;
+                if (!TryGetPoint(command, out location))
+                    break;
+
+                _mouse.OnMouseClick(location);
+            } while (true);
 
             return true;
         }
 
-        private static Point GetPoint(string stringValue)
+        private bool TryGetPoint(string stringValue, out Point point)
         {
+            if (!stringValue.Contains(","))
+            {
+                point = Point.Empty;
+                return false;
+            }
+
             var values = stringValue.Split(',');
-            return new Point(Int32.Parse(values[0]), Int32.Parse(values[1]));
+            point = new Point(Int32.Parse(values[0]), Int32.Parse(values[1]));
+            return true;
         }
     }
 }

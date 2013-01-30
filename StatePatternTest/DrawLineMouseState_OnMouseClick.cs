@@ -19,12 +19,11 @@ namespace StatePatternTest
         }
 
         [TestMethod]
-        public void given_2_click_should_add_a_line_object_to_draw_pad_and_reset_mouse()
+        public void given_2_click_should_add_a_line_object_to_draw_pad()
         {
             _sut.OnMouseClick(_mockMouse.Object, new Point(1, 1));
             _sut.OnMouseClick(_mockMouse.Object, new Point(2, 2));
 
-            _mockMouse.Verify(o => o.Reset(), Times.Once());
             _mockPad.Verify(o => o.Add(It.IsAny<Shape>()), Times.Once());
         }
     }

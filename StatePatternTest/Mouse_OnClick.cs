@@ -27,7 +27,6 @@ namespace StatePatternTest
             _sut.OnMouseClick(new Point(1, 1));
             _sut.OnMouseClick(new Point(1, 2));
 
-            Assert.IsFalse(_sut.WaitForClick);
             _mockPad.Verify(o => o.Add(expect), Times.Once());
         }
 
@@ -37,7 +36,6 @@ namespace StatePatternTest
             _sut.Process("line");
             _sut.OnMouseClick(new Point(1, 1));
 
-            Assert.IsTrue(_sut.WaitForClick);
             _mockPad.Verify(o => o.Add(It.IsAny<Shape>()), Times.Never());
         }
 
@@ -50,7 +48,6 @@ namespace StatePatternTest
             _sut.OnMouseClick(new Point(1, 1));
             _sut.OnMouseClick(new Point(1, 2));
 
-            Assert.IsFalse(_sut.WaitForClick);
             _mockPad.Verify(o => o.Add(expect), Times.Once());
         }
     }
