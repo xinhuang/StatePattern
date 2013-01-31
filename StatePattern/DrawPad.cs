@@ -56,7 +56,10 @@ namespace StatePattern
 
                 Point location;
                 if (!TryGetPoint(command, out location))
+                {
+                    Console.WriteLine("Invalid point.");
                     break;
+                }
 
                 _mouse.OnMouseClick(location);
             } while (true);
