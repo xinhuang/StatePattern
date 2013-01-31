@@ -21,10 +21,12 @@ namespace StatePatternTest
         [TestMethod]
         public void given_2_click_should_add_a_line_object_to_draw_pad()
         {
+            var expect = new Line(new Point(1, 1), new Point(2, 2));
+
             _sut.OnMouseClick(_mockMouse.Object, new Point(1, 1));
             _sut.OnMouseClick(_mockMouse.Object, new Point(2, 2));
 
-            _mockPad.Verify(o => o.Add(It.IsAny<Shape>()), Times.Once());
+            _mockPad.Verify(o => o.Add(expect), Times.Once());
         }
 
         [TestMethod]
@@ -33,6 +35,18 @@ namespace StatePatternTest
             _sut.OnMouseClick(_mockMouse.Object, new Point(1, 1));
 
             _mockPad.Verify(o => o.Add(It.IsAny<Shape>()), Times.Never());
+        }
+
+        [TestMethod]
+        public void given_3_clicks_should_add_a_line_object_to_draw_pad()
+        {
+            var expect = new Line(new Point(1, 1), new Point(2, 2));
+
+            _sut.OnMouseClick(_mockMouse.Object, new Point(1, 1));
+            _sut.OnMouseClick(_mockMouse.Object, new Point(2, 2));
+            _sut.OnMouseClick(_mockMouse.Object, new Point(2, 3));
+
+            _mockPad.Verify(o => o.Add(expect), Times.Once());
         }
     }
 }
