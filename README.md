@@ -25,3 +25,7 @@ Requirements
 * Draw polygon. 
 	N clicks.
 	Double click or click on the start point to finish.
+* Draw polygon.
+	For 2 click, create a rectangle instance instead of a polygon instance.
+	For 3 click, create a triangle instance instead of a polygon instance.
+	
