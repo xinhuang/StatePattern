@@ -46,7 +46,7 @@ namespace StatePattern
 
         public override string ToString()
         {
-            return string.Format("<Point ({0},{1}), ({2},{3})>", _begin.X, _begin.Y, _end.X, _end.Y);
+            return string.Format("<Line ({0},{1}), ({2},{3})>", _begin.X, _begin.Y, _end.X, _end.Y);
         }
     }
 }
