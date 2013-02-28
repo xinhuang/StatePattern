@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("StatePatternTest")]
+[assembly: AssemblyTitle("DrawPadTest")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Schlumberger")]
-[assembly: AssemblyProduct("StatePatternTest")]
+[assembly: AssemblyProduct("DrawPadTest")]
 [assembly: AssemblyCopyright("Copyright © Schlumberger 2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("759d5104-9433-4991-b25a-9dc92679198c")]
+[assembly: Guid("a61ef7b9-374c-41a9-9fd8-12e13b1ef50b")]
 
 // Version information for an assembly consists of the following four values:
 //

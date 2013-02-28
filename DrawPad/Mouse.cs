@@ -1,6 +1,6 @@
 ﻿using System.Drawing;
 
-namespace StatePattern
+namespace DrawPad
 {
     public class Mouse : IMouse
     {

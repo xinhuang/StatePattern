@@ -1,8 +1,8 @@
 using System.Drawing;
+using DrawPad;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
-using StatePattern;
-using Rectangle = StatePattern.Rectangle;
+using Rectangle = DrawPad.Rectangle;
 
 namespace StatePatternTest
 {
@@ -27,7 +27,7 @@ namespace StatePatternTest
             _sut.OnMouseClick(new Point(1, 1));
             _sut.OnMouseClick(new Point(1, 2));
 
-            _mockPad.Verify(o => o.Add(expect), Times.Once());
+            _mockPad.Verify(o => o.Add(expect), Times.Exactly(1));
         }
 
         [TestMethod]
@@ -48,7 +48,7 @@ namespace StatePatternTest
             _sut.OnMouseClick(new Point(1, 1));
             _sut.OnMouseClick(new Point(1, 2));
 
-            _mockPad.Verify(o => o.Add(expect), Times.Once());
+            _mockPad.Verify(o => o.Add(expect), Times.Exactly(1));
         }
     }
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 
-namespace StatePattern
+namespace DrawPad
 {
     public class DrawPad : IDrawPad
     {

@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D70228B4-ACF6-46B3-BE52-7C4BB7EAC166}</ProjectGuid>
+    <ProjectGuid>{0B820EE0-2A71-4A75-B06D-6E9A1B984364}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>StatePatternTest</RootNamespace>
-    <AssemblyName>StatePatternTest</AssemblyName>
+    <RootNamespace>DrawPadTest</RootNamespace>
+    <AssemblyName>DrawPadTest</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -35,8 +35,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Moq">
-      <HintPath>..\..\..\Devenv\Libraries\MoQ\Moq.dll</HintPath>
+    <Reference Include="Moq, Version=4.0.10827.0, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencies\Moq.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Drawing" />
@@ -54,15 +55,15 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="DrawLineMouseState_OnMouseClick.cs" />
     <Compile Include="Mouse_OnClick.cs" />
     <Compile Include="Mouse_Process.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="DrawLineMouseState_OnMouseClick.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\StatePattern\StatePattern.csproj">
-      <Project>{40c715e8-d78f-4da9-a069-4492bb911587}</Project>
-      <Name>StatePattern</Name>
+    <ProjectReference Include="..\DrawPad\DrawPad.csproj">
+      <Project>{95948142-4891-4c12-bcff-b0cd63c35057}</Project>
+      <Name>DrawPad</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

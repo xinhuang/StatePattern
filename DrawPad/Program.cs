@@ -1,4 +1,4 @@
-﻿namespace StatePattern
+﻿namespace DrawPad
 {
     static public class Program
     {

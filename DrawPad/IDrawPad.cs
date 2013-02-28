@@ -1,4 +1,4 @@
-﻿namespace StatePattern
+﻿namespace DrawPad
 {
     public interface IDrawPad
     {

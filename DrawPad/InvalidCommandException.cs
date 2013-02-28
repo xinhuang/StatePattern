@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace StatePattern
+namespace DrawPad
 {
     public class InvalidCommandException : Exception
     {

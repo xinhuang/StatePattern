@@ -1,5 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using StatePattern;
+﻿using DrawPad;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace StatePatternTest
 {
