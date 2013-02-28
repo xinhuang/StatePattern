@@ -4,7 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using Rectangle = DrawPad.Rectangle;
 
-namespace StatePatternTest
+namespace DrawPadTest
 {
     [TestClass]
     public class Mouse_OnClick

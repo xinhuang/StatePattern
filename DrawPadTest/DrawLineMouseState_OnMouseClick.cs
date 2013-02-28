@@ -3,7 +3,7 @@ using DrawPad;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 
-namespace StatePatternTest
+namespace DrawPadTest
 {
     [TestClass]
     public class DrawLineMouseState_OnMouseClick

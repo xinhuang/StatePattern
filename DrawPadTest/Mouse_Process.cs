@@ -1,7 +1,7 @@
 ﻿using DrawPad;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace StatePatternTest
+namespace DrawPadTest
 {
     [TestClass]
     public class Mouse_Process
