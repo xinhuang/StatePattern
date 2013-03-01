@@ -44,7 +44,6 @@
   <ItemGroup>
     <Compile Include="Logic\DrawLineMouseState.cs" />
     <Compile Include="DrawPad.cs" />
-    <Compile Include="Logic\DrawRectangleState.cs" />
     <Compile Include="IDrawPad.cs" />
     <Compile Include="Logic\IMouse.cs" />
     <Compile Include="Logic\IMouseState.cs" />

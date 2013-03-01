@@ -25,10 +25,6 @@ namespace DrawPad.Logic
                     _mouseState = new DrawLineMouseState();
                     return true;
 
-                case "rectangle":
-                    _mouseState = new DrawRectangleState();
-                    return true;
-
                 case "exit":
                     return false;
 

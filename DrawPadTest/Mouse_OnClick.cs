@@ -3,7 +3,6 @@ using DrawPad;
 using DrawPad.Logic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
-using Rectangle = DrawPad.Rectangle;
 
 namespace DrawPadTest
 {
@@ -38,18 +37,6 @@ namespace DrawPadTest
             _sut.OnMouseClick(new Point(1, 1));
 
             _mockPad.Verify(o => o.Add(It.IsAny<Shape>()), Times.Never());
-        }
-
-        [TestMethod]
-        public void given_draw_rectangle_and_2_click_should_return_a_valid_rectangle_object()
-        {
-            var expect = new Rectangle(new Point(1, 1), new Point(1, 2));
-
-            _sut.Process("rectangle");
-            _sut.OnMouseClick(new Point(1, 1));
-            _sut.OnMouseClick(new Point(1, 2));
-
-            _mockPad.Verify(o => o.Add(expect), Times.Exactly(1));
         }
     }
 }
