@@ -1,5 +1,6 @@
 ﻿using System.Drawing;
 using DrawPad;
+using DrawPad.Logic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 

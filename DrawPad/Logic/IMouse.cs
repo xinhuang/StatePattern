@@ -1,4 +1,4 @@
-﻿namespace DrawPad
+﻿namespace DrawPad.Logic
 {
     public interface IMouse
     {

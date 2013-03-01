@@ -1,4 +1,5 @@
 ﻿using DrawPad;
+using DrawPad.Logic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace DrawPadTest

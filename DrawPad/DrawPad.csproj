@@ -42,15 +42,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DrawLineMouseState.cs" />
+    <Compile Include="Logic\DrawLineMouseState.cs" />
     <Compile Include="DrawPad.cs" />
-    <Compile Include="DrawRectangleState.cs" />
+    <Compile Include="Logic\DrawRectangleState.cs" />
     <Compile Include="IDrawPad.cs" />
-    <Compile Include="IMouse.cs" />
-    <Compile Include="IMouseState.cs" />
+    <Compile Include="Logic\IMouse.cs" />
+    <Compile Include="Logic\IMouseState.cs" />
     <Compile Include="InvalidCommandException.cs" />
     <Compile Include="Line.cs" />
-    <Compile Include="Mouse.cs" />
+    <Compile Include="Logic\Mouse.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rectangle.cs" />
