@@ -55,7 +55,6 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="DrawLineMouseState_OnMouseClick.cs" />
     <Compile Include="Mouse_OnClick.cs" />
     <Compile Include="Mouse_Process.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

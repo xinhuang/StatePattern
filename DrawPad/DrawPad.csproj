@@ -42,11 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Logic\DrawLineMouseState.cs" />
     <Compile Include="DrawPad.cs" />
     <Compile Include="IDrawPad.cs" />
     <Compile Include="Logic\IMouse.cs" />
-    <Compile Include="Logic\IMouseState.cs" />
     <Compile Include="InvalidCommandException.cs" />
     <Compile Include="Line.cs" />
     <Compile Include="Logic\Mouse.cs" />

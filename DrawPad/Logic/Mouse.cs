@@ -5,7 +5,16 @@ namespace DrawPad.Logic
     public class Mouse : IMouse
     {
         private readonly IDrawPad _drawPad;
-        private IMouseState _mouseState;
+        private DrawLineState _state = DrawLineState.None;
+        private Point _begin;
+        private Point _end;
+
+        enum DrawLineState
+        {
+            None,
+            WaitBeginPoint,
+            WaitEndPoint,
+        }
 
         public Mouse(IDrawPad drawPad)
         {
@@ -22,7 +31,7 @@ namespace DrawPad.Logic
             switch (command)
             {
                 case "line":
-                    _mouseState = new DrawLineMouseState();
+                    _state = DrawLineState.WaitBeginPoint;
                     return true;
 
                 case "exit":
@@ -35,7 +44,22 @@ namespace DrawPad.Logic
 
         public void OnMouseClick(Point location)
         {
-            _mouseState.OnMouseClick(this, location);
+            switch (_state)
+            {
+                case DrawLineState.WaitBeginPoint:
+                    _begin = location;
+                    _state = DrawLineState.WaitEndPoint;
+                    break;
+
+                case DrawLineState.WaitEndPoint:
+                    _end = location;
+                    _state = DrawLineState.WaitBeginPoint;
+                    DrawPad.Add(new Line(_begin, _end));
+                    break;
+
+                default:
+                    throw new InvalidCommandException("Draw line");
+            }
         }
     }
 }
