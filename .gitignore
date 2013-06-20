@@ -1,0 +1,6 @@
+*.suo
+*.vsmdi
+*.testrunconfig
+/TestResults
+bin
+obj
