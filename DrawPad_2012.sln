@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{4BEA596E-4270-4F1B-A13E-3D82DA2D92CB}"
+	ProjectSection(SolutionItems) = preProject
+		DrawPad.vsmdi = DrawPad.vsmdi
+		LocalTestRun.testrunconfig = LocalTestRun.testrunconfig
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DrawPad_2012", "DrawPad\DrawPad_2012.csproj", "{867C6FED-289C-444C-B406-6793177B0033}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DrawPadTest_2012", "DrawPadTest\DrawPadTest_2012.csproj", "{D1790E03-CE1A-4F84-9A76-8B8ACED161D5}"
+EndProject
+Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = DrawPad.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{867C6FED-289C-444C-B406-6793177B0033}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{867C6FED-289C-444C-B406-6793177B0033}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{867C6FED-289C-444C-B406-6793177B0033}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{867C6FED-289C-444C-B406-6793177B0033}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1790E03-CE1A-4F84-9A76-8B8ACED161D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1790E03-CE1A-4F84-9A76-8B8ACED161D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1790E03-CE1A-4F84-9A76-8B8ACED161D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1790E03-CE1A-4F84-9A76-8B8ACED161D5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
